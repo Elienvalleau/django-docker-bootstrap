@@ -8,8 +8,8 @@ from runutils import runbash, run_cmd, getvar, ensure_dir, run_daemon
 
 @click.group()
 def run():
-    ensure_dir('/data/static', owner='developer', group='developer')
-    ensure_dir('/data/static/react', owner='developer', group='developer')
+    ensure_dir('/data/static', owner='developer', group=getvar('DEVELOPER_GID'))
+    ensure_dir('/data/static/react', owner='developer', group=getvar('DEVELOPER_GID'))
     run_cmd(['npm', 'config', 'set', 'static_root', getvar('STATIC_ROOT')],
             user='developer')
     run_daemon(['npm', 'install'], user='developer', exit_on_finish=False)

@@ -3,13 +3,13 @@
 import click
 
 # Utils Imports
-from runutils import runbash, run_daemon, ensure_dir
+from runutils import runbash, run_daemon, ensure_dir, getvar
 
 
 @click.group()
 def run():
-    ensure_dir('/data/logs/', owner='developer', group='developer')
-    ensure_dir('/data/logs/nginx/', owner='developer', group='developer')
+    ensure_dir('/data/logs/', owner='developer', group=getvar('DEVELOPER_GID'))
+    ensure_dir('/data/logs/nginx/', owner='developer', group=getvar('DEVELOPER_GID'))
 
 
 @run.command()

@@ -47,11 +47,11 @@ def generate_makemessages_command(domain):
 
 # INIT: WILL RUN BEFORE ANY COMMAND AND START  #
 def init(stopper):
-    ensure_dir('/data/logs/', owner='developer', group='developer')
-    ensure_dir('/data/logs/django', owner='developer', group='developer')
-    ensure_dir('/data/static', owner='developer', group='developer')
+    ensure_dir('/data/logs/', owner='developer', group=getvar('DEVELOPER_GID'))
+    ensure_dir('/data/logs/django', owner='developer', group=getvar('DEVELOPER_GID'))
+    ensure_dir('/data/static', owner='developer', group=getvar('DEVELOPER_GID'))
     {% if cookiecutter.use_translation == 'True' -%}
-    ensure_dir('/src/locale', owner='developer', group='developer')
+    ensure_dir('/src/locale', owner='developer', group=getvar('DEVELOPER_GID'))
     {%- endif %}
     if not stopper.stopped:
         if settings.DEBUG is False:
