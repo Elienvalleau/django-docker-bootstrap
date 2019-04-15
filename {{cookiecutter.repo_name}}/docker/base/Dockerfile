@@ -15,7 +15,8 @@ RUN set -x && apt-get update && DEBIAN_FRONTEND=noninteractive \
 RUN pip3 install click==6.6
 
 COPY skel /etc/skel
-RUN git clone https://github.com/legios89/molokai.git /etc/skel/.vim/
+#RUN git clone https://github.com/legios89/molokai.git /etc/skel/.vim/
+RUN git clone https://github.com/tomasr/molokai.git /etc/skel/.vim/
 COPY skel/* /root/
 COPY runutils.py /usr/local/lib/python3.4/dist-packages/runutils.py
 
