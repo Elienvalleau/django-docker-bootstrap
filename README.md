@@ -15,7 +15,7 @@ A [`cookiecutter`](https://github.com/audreyr/cookiecutter) template for Django/
 * Requirements for cookiecutter: ```apt-get install python-dev```
 * Then get cookiecutter: ```pip install Markdown cookiecutter```
 * Finally enter the directory where you want to store your project and enter the following:
-      * ```cookiecutter https://github.com/legios89/django-docker-bootstrap.git```
+      ```cookiecutter https://github.com/Elienvalleau/django-docker-bootstrap.git```
 
 ## Cookiecutter params
 * project_name: The name of the project.
